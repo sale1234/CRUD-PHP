@@ -13,10 +13,19 @@
     <title>CRUD PHP MYSQL AJAX</title>
   </head>
   <body>
-   <h1 class="text-center">CRUD</h1>
+   <h1 class="text-center">PHP Project</h1>
    <div class="container-fluid">
      <div class="row">
        <div class="container">
+         <div class="row">
+         <div class="col-md-2"></div>
+           <div class="col-md-8">
+             <!-- Button trigger modal -->
+              <button type="button" style="margin-bottom: 30px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Add User
+              </button>
+           </div>
+         </div>
          <div class="row">
            <div class="col-md-2"></div>
            <div class="col-md-8">
@@ -30,12 +39,7 @@
                  <th>Options</th>
                </thead>
                <tbody>
-                 <td>1</td>
-                 <td>Petar Petrovic</td>
-                 <td>petar@gmail.com</td>
-                 <td>0657828555</td>
-                 <td>Vienna</td>
-                 <td><a href="" class="button">Edit</a> <a href="">Delete</a></td>
+                
                </tbody>
              </table>
            </div>
@@ -73,5 +77,24 @@
     
     </script>
 
+    <!-- Start of modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New User</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to add a new user?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of modal -->
   </body>
 </html>
