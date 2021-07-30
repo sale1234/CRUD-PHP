@@ -133,11 +133,6 @@
              if(status=='true')
              {
               table = $('#example').DataTable();
-              // table.cell(parseInt(trid) - 1,0).data(id);
-              // table.cell(parseInt(trid) - 1,1).data(username);
-              // table.cell(parseInt(trid) - 1,2).data(email);
-              // table.cell(parseInt(trid) - 1,3).data(mobile);
-              // table.cell(parseInt(trid) - 1,4).data(city);
               var button =   '<td><a href="javascript:void();" data-id="' +id + '" class="btn btn-info btn-sm editbtn">Edit</a>  <a href="#!" data-bs-toggle="modal" data-id="' +id + '" data-bs-target="#exampleModal" class="btn btn-danger btn-sm">Delete</a></td>';
               var row = table.row("[id='"+trid+"']");
               row.row("[id='" + trid + "']").data([id,username,email,mobile,city,button]);
@@ -178,43 +173,43 @@
    }) 
    });
 
-    // $(document).on('click','.deleteBtn',function(event){
-    //    var table = $('#example').DataTable();
-    //   event.preventDefault();
-    //   var id = $(this).data('id');
-    //   if(confirm("Are you sure want to delete this User ? "))
-    //   {
-    //   $.ajax({
-    //     url:"delete_user.php",
-    //     data:{id:id},
-    //     type:"post",
-    //     success:function(data)
-    //     {
-    //       var json = JSON.parse(data);
-    //       status = json.status;
-    //       if(status=='success')
-    //       {
-    //         //table.fnDeleteRow( table.$('#' + id)[0] );
-    //          //$("#example tbody").find(id).remove();
-    //          //table.row($(this).closest("tr")) .remove();
-    //          $("#"+id).closest('tr').remove();
-    //       }
-    //       else
-    //       {
-    //         alert('Failed');
-    //         return;
-    //       }
-    //     }
-    //   });
-    //   }
-    //   else
-    //   {
-    //     return null;
-    //   }
+    $(document).on('click','.deleteBtn',function(event){
+       var table = $('#example').DataTable();
+      event.preventDefault();
+      var id = $(this).data('id');
+      if(confirm("Are you sure want to delete this User ? "))
+      {
+      $.ajax({
+        url:"delete_user.php",
+        data:{id:id},
+        type:"post",
+        success:function(data)
+        {
+          var json = JSON.parse(data);
+          status = json.status;
+          if(status=='success')
+          {
+            //table.fnDeleteRow( table.$('#' + id)[0] );
+             //$("#example tbody").find(id).remove();
+             //table.row($(this).closest("tr")) .remove();
+             $("#"+id).closest('tr').remove();
+          }
+          else
+          {
+            alert('Failed');
+            return;
+          }
+        }
+      });
+      }
+      else
+      {
+        return null;
+      }
 
 
 
-    // })
+    })
  </script>
  <!-- Modal -->
  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
