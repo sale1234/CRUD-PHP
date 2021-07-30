@@ -4,6 +4,5 @@
   if(mysqli_connect_errno())
   {
     echo "Database connection error!";
-    exit;
 
   }
